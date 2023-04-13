@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterMahasiswa extends RecyclerView.Adapter<AdapterMahasiswa.ViewHolderDestinasi> {
+public class AdapterMahasiswa extends RecyclerView.Adapter<AdapterMahasiswa.ViewHolderMahasiswa> {
     private Context ctx;
     private ArrayList arrId, arrNpm, arrNama, arrProdi;
 
@@ -25,13 +25,13 @@ public class AdapterMahasiswa extends RecyclerView.Adapter<AdapterMahasiswa.View
 
     @NonNull
     @Override
-    public ViewHolderDestinasi onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderMahasiswa onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View varView = LayoutInflater.from(ctx).inflate(R.layout.list_item_mahasiswa, parent, false);
-        return new ViewHolderDestinasi(varView);
+        return new ViewHolderMahasiswa(varView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderDestinasi holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderMahasiswa holder, int position) {
         holder.tvId.setText(arrId.get(position).toString());
         holder.tvNpm.setText(arrNpm.get(position).toString());
         holder.tvNama.setText(arrNama.get(position).toString());
@@ -43,10 +43,10 @@ public class AdapterMahasiswa extends RecyclerView.Adapter<AdapterMahasiswa.View
         return arrNama.size();
     }
 
-    public class ViewHolderDestinasi extends RecyclerView.ViewHolder{
+    public class ViewHolderMahasiswa extends RecyclerView.ViewHolder{
         TextView tvId, tvNpm, tvNama, tvProdi;
 
-        public ViewHolderDestinasi(@NonNull View itemView) {
+        public ViewHolderMahasiswa(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.tv_id);
             tvNpm = itemView.findViewById(R.id.tv_npm);
@@ -54,5 +54,7 @@ public class AdapterMahasiswa extends RecyclerView.Adapter<AdapterMahasiswa.View
             tvProdi = itemView.findViewById(R.id.tv_prodi);
 
         }
+
     }
 }
+
